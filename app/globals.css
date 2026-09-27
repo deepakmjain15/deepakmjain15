@@ -1,0 +1,52 @@
+@import "tailwindcss";
+
+/* Design tokens. Use them in classes like bg-paper, text-ink, text-muted, bg-brand. */
+@theme {
+  --font-sans: var(--font-inter), ui-sans-serif, system-ui, sans-serif;
+
+  --color-paper: #f7f6f2;
+  --color-surface: #ffffff;
+  --color-ink: #17191c;
+  --color-muted: #5f646d;
+  --color-subtle: #8a8f98;
+  --color-line: #e4e2dc;
+  --color-line-strong: #cfccc4;
+
+  --color-brand: #1d5c4d;
+  --color-brand-hover: #174a3e;
+  --color-brand-soft: #e5efeb;
+  --color-brand-ink: #123a31;
+
+  --color-good: #1f7a5a;
+  --color-good-soft: #e3f2ea;
+  --color-warn: #a86208;
+  --color-warn-soft: #fbf0dc;
+  --color-bad: #b4383a;
+  --color-bad-soft: #fae6e5;
+}
+
+html {
+  -webkit-text-size-adjust: 100%;
+}
+
+body {
+  background: var(--color-paper);
+  color: var(--color-ink);
+  font-feature-settings: "cv11", "ss01";
+  -webkit-font-smoothing: antialiased;
+}
+
+::selection {
+  background: var(--color-brand-soft);
+}
+
+/* Keyboard focus that's visible but not noisy. */
+:focus-visible {
+  outline: 2px solid var(--color-brand);
+  outline-offset: 2px;
+}
+
+input[type="date"]::-webkit-calendar-picker-indicator {
+  opacity: 0.55;
+  cursor: pointer;
+}
